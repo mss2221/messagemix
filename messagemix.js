@@ -1,9 +1,9 @@
 
 const arrays = {
-    timeArray : ['time1', 'time2', 'time3', 'time4'],
-    verbArray : ['verb1', 'verb2', 'verb3', 'verb4'],
-    adjectiveArray : ['adjective1', 'adjective2', 'adjective3', 'adjective4'],
-    nounArray : ['noun1', 'noun2', 'noun3', 'noun4'],
+  timeArray : ['Tommorrow', 'In ten minutes', 'Next year', 'Very soon', 'By October'],
+  verbArray : ['you will discover', 'everything will be', 'your thoughts will turn to', 'you might be', 'you will receive'],
+  adjectiveArray : ['a very large', 'some big green', 'a very small', 'a wonderful', 'a lovely'],
+  nounArray : ['motorcycle', 'vegetable', 'birthday party', 'rock', 'pond'],
 
     random : () => {
         return Math.floor(Math.random()*4)
