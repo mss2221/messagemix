@@ -6,7 +6,7 @@ const arrays = {
   nounArray : ['motorcycle', 'vegetable', 'birthday party', 'rock', 'pond'],
 
     random : () => {
-        return Math.floor(Math.random()*4)
+        return Math.floor(Math.random()*5)
     },
 
     message:()=>{
