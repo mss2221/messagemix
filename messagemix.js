@@ -1,7 +1,7 @@
-alert('Welcome! Press OK if you are not OK!');
+alert("Welcome! Press OK if you are not OK!");
 const button = document.getElementById("click");
 const messagedisp = document.getElementById("message");
-let moto = document.getElementById('moto');
+let moto = document.getElementById("moto");
 const arrays = {
   timeArray: [
     "Tommorrow",
@@ -40,18 +40,38 @@ const arrays = {
 };
 
 console.log(arrays.message());
+function dispImage(img) {
+  document.getElementById(img).style.display = "block";
+}
+function hideImg() {
+  moto.style.display = "none";
+  vegetable.style.display = "none";
+  birthday.style.display = "none";
+  rock.style.display = "none";
+  pond.style.display = "none";
+}
 
 button.addEventListener("click", function () {
   const mixmsg = arrays.message();
   messagedisp.innerHTML = mixmsg;
-  if(mixmsg.includes('motorcycle')===true){moto.style.display='block';vegetable.style.display='none';birthday.style.display='none';rock.style.display='none';pond.style.display='none'
-}else if(mixmsg.includes('vegetable')===true){moto.style.display='none';vegetable.style.display='block';birthday.style.display='none';rock.style.display='none';pond.style.display='none'
-}else if(mixmsg.includes('birthday')===true){moto.style.display='none';vegetable.style.display='none';birthday.style.display='block';rock.style.display='none';pond.style.display='none'
-}else if(mixmsg.includes('rock')===true){moto.style.display='none';vegetable.style.display='none';birthday.style.display='none';rock.style.display='block';pond.style.display='none'
-}else if(mixmsg.includes('pond')===true){moto.style.display='none';vegetable.style.display='none';birthday.style.display='none';rock.style.display='none';pond.style.display='block'
-}
-}
-);
-
-
-
+  if (mixmsg.includes("motorcycle") === true) {
+    hideImg();
+    dispImage("moto");
+    // vegetable.style.display = "none";
+    // birthday.style.display = "none";
+    // rock.style.display = "none";
+    // pond.style.display = "none";
+  } else if (mixmsg.includes("vegetable") === true) {
+    hideImg();
+    dispImage("vegetable");
+  } else if (mixmsg.includes("birthday") === true) {
+    hideImg();
+    dispImage("birthday");
+  } else if (mixmsg.includes("rock") === true) {
+    hideImg();
+    dispImage("rock");
+  } else if (mixmsg.includes("pond") === true) {
+    hideImg();
+    dispImage("pond");
+  }
+});
