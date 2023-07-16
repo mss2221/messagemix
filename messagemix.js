@@ -3,7 +3,7 @@ const figlet = require("figlet")
 
 
 const arrays = {
-  timeArray : ['Tommorrow', 'In ten minutes', 'Next year', 'Very soon', 'By October'],
+  timeArray : ['Tomorrow', 'In ten minutes', 'Next year', 'Very soon', 'By October'],
   verbArray : ['you will discover', 'everything will be', 'your thoughts will turn to', 'you might be', 'you will receive'],
   adjectiveArray : ['a very large', 'some big green', 'a very small', 'a wonderful', 'a lovely'],
   nounArray : ['motorcycle', 'vegetable', 'birthday party', 'rock', 'pond'],
@@ -40,37 +40,57 @@ The desired result:
 |_| \_|\___/_/\_\\__|  year you might be a wonderful rock
 
 */
-const makeAscii = (words) => {
-  wordsArray = words.split(' ');
-  firstWord = wordsArray[0];
+/*const makeAscii = (words) => {
+   wordsArray = words.split(' ');
+   firstWord = wordsArray[0];
   figlet.text(firstWord, function (err, asciiWord) {
    console.log(asciiWord);
-//   console.log(words);  -- this line within the function will ensure it appears after
+  console.log(words);  //-- this line within the function will ensure it appears after
 
   })
-};
+}; 
 
-makeAscii(words)
-console.log(words)
+makeAscii(words) 
+//console.log(words)
 
 /*
 I have started trying to make a Promise /async
-structure, but I cannot get it to work.
+structure, but I cannot get it to work. */
 
 function makeAscii() {
+  wordsArray = words.split(' ');
+  firstWord = wordsArray[0];
+  figlet.text(firstWord, function (err, asciiWord) {
+    console.log (`${asciiWord} ${(wordsArray.slice(1)).join(' ')}`);
+  });
+};
+
+
+function resolveAfter2Seconds() {
   return new Promise(resolve => {
-    wordsArray = words.split(' ');
-    firstWord = wordsArray[0];
-    figlet.text(firstWord, function (err, asciiWord) {
-      console.log(asciiWord);
-    });
+    setTimeout(() => {
+      resolve(makeAscii());
+    }, 2000);
   });
 }
 
-async function displayMessage() {
-  const msg = await makeAscii();
-  console.log(arrays.message);
+async function asyncCall() {
+  console.log('Loading, please wait...');
+  const result = await resolveAfter2Seconds();
+  //console.log(result);
+  // Expected output: "resolved"
 }
 
-displayMessage()
-*/
+asyncCall();
+
+//makeAscii()
+
+/*async function displayMessage() {
+  
+  const msg = await makeAscii();
+  console.log(arrays.message());
+  
+}
+
+displayMessage() */
+
