@@ -10,8 +10,9 @@
 }
 
 .messagebody {
-  width: 600px;
-  margin: 150px auto;
+  width: 650px;
+  margin: 15px auto;
+  padding: 1.5em;
   background-color: #fa5252;
   display: flex;
   align-items: center;
@@ -24,7 +25,10 @@
   height: 263px;
   width: 283px;
   margin: 30px;
+}
 
+.hidden {
+  display: none;
 }
 
 #message {
@@ -32,9 +36,10 @@
   font-size: 24px;
   font-weight: bold;
   text-align: center;
+  margin: 1rem;
 }
 
-#click {
+#messageButton {
   border: none;
   height: 24px;
   font-size: 16px;
@@ -43,6 +48,12 @@
   /* border: 2px solid black; */
   font-family: "Lucida Console", "Courier New", monospace;
   margin-bottom: 5px;
+}
+
+#asciiDiv {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 #moto {
