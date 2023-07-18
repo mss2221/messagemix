@@ -1,2 +1,2 @@
 # messagemix
-Demo project
+Codecademy collaborative project
