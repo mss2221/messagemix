@@ -38,21 +38,6 @@ const arrays = {
     return Math.floor(Math.random() * 5);
   },
 
-  // message: () => {
-  //   newMessage = `${arrays.timeArray[arrays.random()]
-  //   } ${arrays.verbArray[arrays.random()]
-  //   } ${arrays.adjectiveArray[arrays.random()]
-  //   } ${arrays.nounArray[arrays.random()]
-  //   }`;
-  //   return newMessage;
-  // },
-
-/*
-    This keeps the phrases separate. Does not seem to
-    add functionality after all. The hope was to use
-    the nounPhrase for image selection. But still stuck
-    with an if/else loop
-*/
   randomPhrases: () => {
     adverbPhrase = `${arrays.timeArray[arrays.random()]}`;
     verbPhrase = `${arrays.verbArray[arrays.random()]}`;
@@ -67,26 +52,7 @@ const arrays = {
     return phrases;
   }
 };
-/*
-function dispImage(img) {
-  document.getElementById(img).style.display = "block";
-}
 
-function hideImg() {
-  moto.style.display = "none";
-  vegetable.style.display = "none";
-  birthday.style.display = "none";
-  rock.style.display = "none";
-  pond.style.display = "none";
-}
-*/
-
-// The @id attribute "click"  and the event type "click"
-// are a little confusing.
-// Changed the @id of the button to 'messageButton'
-
-// the phrases are broken up here, so that 1st word can be
-// selected later for ascii display
 function assembleMessage () {
   const mixmsg = `${arrays.randomPhrases().adverbPhrase} \
   ${arrays.randomPhrases().verbPhrase} \
@@ -110,30 +76,11 @@ function assembleMessage () {
     } else if (mixmsg.includes("pond") === true) {
       imgUrl = "./pics/pond.jpg"
     }
+
     keywordImage.src = imgUrl;
+    
     // img hidden by default until a message is generated
     keywordImage.classList.remove("hidden");
   }
 
 button.addEventListener("click", assembleMessage)
-/*
-button.addEventListener("click", function () {
-  const mixmsg = arrays.message();
-  messageDisplay.innerHTML = mixmsg;
-  if (mixmsg.includes("motorcycle") === true) {
-    hideImg();
-    dispImage("moto");
-  } else if (mixmsg.includes("vegetable") === true) {
-    hideImg();
-    dispImage("vegetable");
-  } else if (mixmsg.includes("birthday") === true) {
-    hideImg();
-    dispImage("birthday");
-  } else if (mixmsg.includes("rock") === true) {
-    hideImg();
-    dispImage("rock");
-  } else if (mixmsg.includes("pond") === true) {
-    hideImg();
-    dispImage("pond");
-  }
-});*/
